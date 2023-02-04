@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ product.name }}</title>
+    <link rel="stylesheet" href="{{ url_for('static' , filename='css/product.css') }}">
+</head>
+<body>
+    <div class="container">
+        <div class="checkout">
+            <h1>Exercise Dojo</h1>
+            <div class="top">
+                <h2 class="welcome">Welcome, {{ session["username"] }}</h2>
+                <div class="links">
+                    <a class="top-buttons" href="/dashboard">Back to dashboard</a>
+                    <a class="top-buttons" href="/checkout">Checkout</a>
+                    <a class="top-buttons" href="/logout">Logout</a>
+                </div>
+            </div>
+        </div>
+        <nav>
+            <a class="nav" href="/category/1">Smith Machines</a>
+            <a class="nav" href="/category/2">Bench Press</a>
+            <a class="nav" href="/category/3">Squat Racks</a>
+            <a class="nav" href="/category/4">Dumbbells</a>
+            <a class="nav" href="/category/5">Other</a>
+        </nav>
+        <form class="product-container" action="/add/item/to_cart" method="post">
+            <h3 class="product-name">{{product.name}}</h3>
+            <a class="reviews" href="#">Reviews (1)</a>
+            <img class="product-img" src="{{ product.url }}" alt="smith machine">
+            <h3>$499.99</h3>
+            <div class="description">
+                <h4>Description</h4>
+                <p>{{ product.description }}</p>
+            </div>
+            <input type="hidden" name="id" value="{{ product.id }}">
+            <button class="cart-button">Add to Cart</button>
+        </form>
+    </div>
+</body>
+</html>

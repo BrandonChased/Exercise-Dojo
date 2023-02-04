@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout</title>
+    <link rel="stylesheet" href="{{ url_for('static' , filename='css/cart.css') }}">
+</head>
+<body>
+    <div class="container" >
+        <div class="checkout">
+            <h1>Exercise Dojo</h1>
+            <div class="top">
+                <h2 class="welcome">Welcome, {{ session["username"] }}</h2>
+                <div class="links">
+                    <a class="top-buttons" href="/clear/cart">Empty Cart</a>
+                    <a class="top-buttons" href="/dashboard">Dashboard</a>
+                    <a class="top-buttons" href="/logout">Logout</a>
+                </div>
+            </div>
+        </div>
+        <nav>
+            <a class="nav" href="/category/1">Smith Machines</a>
+            <a class="nav" href="/category/2">Bench Press</a>
+            <a class="nav" href="/category/3">Squat Racks</a>
+            <a class="nav" href="/category/4">Dumbbells</a>
+            <a class="nav" href="/category/5">Other</a>
+        </nav>
+
+        <h1 class="dojo-cart">Dojo Cart</h1>
+        {% if cart|length == 0 %}
+
+        <h5 class="message">You have no items in your cart</h5>
+
+        {% else %}
+        <div class="cart">
+            {% for item in cart %}
+            <div class="item">
+                <h3>{{item.name}}</h3>
+                <a href="#">Reviews (1)</a>
+                <img class="product-img" src="{{ item.url }}" alt="smith machine">
+                <h3>{{ item.price }}</h3>
+            </div>
+            {% endfor %}
+        </div>
+        {% endif %}
+    </div>
+</body>
+</html>

@@ -1,0 +1,114 @@
+* {
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+
+/* typograpy */
+
+h1 {
+    font-size: 5rem;
+    padding: 2rem;
+    color: goldenrod;
+}
+
+h2 {
+    font-size: 3rem;
+    border-bottom: 5px solid white;
+    text-align: center;
+    color: goldenrod;
+    padding: 1rem;
+    height: 20%;
+}
+
+h3 {
+    font-size: 3rem;
+    color: white;
+    width: fit-content;
+    background-color: black;
+    padding: 1rem;
+}
+
+img {
+    height: 120px;
+}
+
+label {
+    font-size: 2rem;
+}
+
+a {
+    margin-top: 1rem;
+    text-align: center;
+    font-size: 1.3rem;
+}
+
+/* maincontent */
+
+.container {
+    background-image: url(https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/best-luxury-gyms-london-1577449934.jpg);
+    background-size: cover;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.popular-brands {
+    padding: 1rem;
+    display: flex;
+    background-color: white;
+    justify-content: space-between;
+}
+
+form {
+    margin: 0 auto;
+    width: 20%;
+    height: 60%;
+    background-color: rgb(0, 0, 0);
+    color: white;
+    border: 5px solid white;
+    border-radius: 1rem;
+}
+
+.data-container {
+    height: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.data-container2 {
+    height: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.data {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+input {
+    width: 40%;
+    padding: .5rem 0;
+}
+
+button {
+    margin: 0 auto;
+    margin-top: .5rem;
+    width: fit-content;
+    font-size: 1.5rem;
+    padding: .4rem 1.6rem;
+    background-color:goldenrod;
+    color: black;
+    font-weight: 700;
+    border-radius: 1rem;
+}
+
+button:focus,
+button:hover {
+    background-color: gold;
+}

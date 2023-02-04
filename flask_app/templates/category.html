@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/dashboard.css') }}">
+</head>
+<body>
+    <div class="container">
+        <div class="checkout">
+            <h1>Exercise Dojo</h1>
+            <div class="top">
+                <h2 class="welcome">Welcome, {{ session["username"] }}</h2>
+                <div class="links">
+                    <a class="top-buttons" href="/checkout">Checkout</a>
+                    <a class="top-buttons" href="/dashboard">Dashboard</a>
+                    <a class="top-buttons" href="/logout">Logout</a>
+                </div>
+            </div>
+        </div>
+        <nav>
+            <a class="nav" href="/category/1">Smith Machines</a>
+            <a class="nav" href="/category/2">Bench Press</a>
+            <a class="nav" href="/category/3">Squat Racks</a>
+            <a class="nav" href="/category/4">Dumbbells</a>
+            <a class="nav" href="/category/5">Other</a>
+        </nav>
+        <div class="products-container">
+            {% for product in products %}
+            <div class="product-container">
+                <h3>{{product.name}}</h3>
+                <a href="#">Reviews (1)</a>
+                <img class="product-img" src="{{ product.url }}" alt="smith machine">
+                <h3>$499.99</h3>
+                <a href="/view/{{ product.id }}" class="cart-button">View Item</a>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</body>
+</html>
